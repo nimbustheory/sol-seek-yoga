@@ -37,19 +37,6 @@ export default function DemoWrapper() {
         * { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
 
-      {/* Top bar */}
-      <div style={{ height: 36, background: "#fff", borderBottom: "1px solid #e8e2d8", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 20px", flexShrink: 0, zIndex: 50 }}>
-        <span style={{ fontSize: 12, color: "#6a7060", fontWeight: 500 }}>{config.studioName} live demo</span>
-        <button
-          onClick={() => setIsAdmin(true)}
-          title="Enter Admin Dashboard"
-          style={{ display: "flex", alignItems: "center", gap: 5, padding: "4px 10px", borderRadius: 6, border: "1px solid #e8e2d8", background: "transparent", cursor: "pointer", color: "#6a7060", fontSize: 11, fontWeight: 600 }}
-        >
-          <Shield size={14} />
-          Admin
-        </button>
-      </div>
-
       {/* Three-column layout */}
       <div style={{ flex: 1, display: "flex", overflow: "hidden", justifyContent: "center" }}>
 
@@ -92,7 +79,7 @@ export default function DemoWrapper() {
         <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "0 24px", flexShrink: 0 }}>
           <div style={{
             width: 390,
-            height: "calc(100vh - 36px)",
+            height: "100vh",
             borderRadius: 0,
             overflow: "hidden",
             background: "#f0ebe4",

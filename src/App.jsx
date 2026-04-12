@@ -69,6 +69,9 @@ const IMAGES = {
   newMember: `${CDN}/new-member-special-640w.jpg`,
   studioWarm: `${CDN}/Sol_Sek_SB_8-640w.jpg`,
   classGroup: `${CDN}/_DSC0009-640w.jpg`,
+  vinyasaFlow: `${CDN}/image-640w.jpeg`,
+  studioSession: `${CDN}/_DSC0189-9e451985-640w.jpg`,
+  owners: `${CDN}/Justin+-+Greg-640w.jpg`,
   logoDark: "https://irp.cdn-website.com/96388b03/dms3rep/multi/sol-seek_dark.svg",
   logoLight: "https://irp.cdn-website.com/96388b03/dms3rep/multi/sol-seek_light.svg",
 };
@@ -268,7 +271,7 @@ function HomePage() {
         <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
           <img src={IMAGES.hero} alt="" loading="eager" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.25 }} onError={e => { e.target.style.display = "none"; }} />
         </div>
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(165deg, rgba(30,36,48,.85) 0%, rgba(30,36,48,.7) 100%)", zIndex: 1 }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(165deg, rgba(30,36,48,.6) 0%, rgba(30,36,48,.45) 100%)", zIndex: 1 }} />
         <div style={{ position: "relative", zIndex: 2, padding: "32px 22px" }}>
           <p style={{ color: T.accent, fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.2em", marginBottom: 8 }}>
             {formatDateLong(today)}
@@ -277,7 +280,7 @@ function HomePage() {
             {STUDIO_CONFIG.heroLine1}<br/>
             <span style={{ color: T.accent, fontStyle: "italic", fontWeight: 500 }}>{STUDIO_CONFIG.heroLine2}</span>
           </h1>
-          <p style={{ color: "#a8b0c0", fontSize: 13, maxWidth: 280, marginTop: 10, lineHeight: 1.5 }}>{STUDIO_CONFIG.description}</p>
+          <p style={{ color: "#c8ccd8", fontSize: 13, maxWidth: 340, marginTop: 10, lineHeight: 1.5 }}>{STUDIO_CONFIG.description}</p>
         </div>
       </section>
 
@@ -400,7 +403,7 @@ function ClassesPage() {
 
   return (
     <div style={{ padding: "0 16px" }}>
-      <PageTitle title="Classes" subtitle="Past, present, and upcoming practice" />
+      <PageHero title="Classes" subtitle="Past, present, and upcoming practice" image={IMAGES.classAction} />
       <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
         {allPractices.map(p => (
           <PracticeCardFull key={p.id} practice={p} expanded={expandedPractice === p.id} onToggle={() => setExpandedPractice(expandedPractice === p.id ? null : p.id)} />
@@ -419,7 +422,7 @@ function SchedulePage() {
 
   return (
     <div style={{ padding: "0 16px" }}>
-      <PageTitle title="Schedule" subtitle="Reserve your spot — classes fill up fast" />
+      <PageHero title="Schedule" subtitle="Reserve your spot -- classes fill up fast" image={IMAGES.studioInterior} />
       <div style={{ display: "flex", gap: 4, marginBottom: 16, overflowX: "auto", paddingBottom: 4 }}>
         {days.map((d, i) => (
           <button key={d} onClick={() => setSelectedDay(i)} style={{ padding: "8px 14px", borderRadius: 8, border: "none", fontSize: 13, fontWeight: 600, cursor: "pointer", whiteSpace: "nowrap", background: selectedDay === i ? T.accent : T.bgDim, color: selectedDay === i ? "#fff" : T.textMuted, transition: "all 0.15s" }}>
@@ -472,7 +475,7 @@ function PracticePage() {
 
   return (
     <div style={{ padding: "0 16px" }}>
-      <PageTitle title="My Practice" subtitle="Track your journey and celebrate growth" />
+      <PageHero title="My Practice" subtitle="Track your journey and celebrate growth" image={IMAGES.vinyasaFlow} />
 
       {/* Stats Row */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginBottom: 20 }}>
@@ -566,7 +569,7 @@ function CommunityPage() {
 
   return (
     <div style={{ padding: "0 16px" }}>
-      <PageTitle title="Community" subtitle="Celebrate each other's journeys" />
+      <PageHero title="Community" subtitle="Celebrate each other's journeys" image={IMAGES.classGroup} />
 
       {/* Mantra Banner */}
       <div style={{ background: `linear-gradient(135deg, ${T.accentGhost}, ${T.successGhost})`, border: `1px solid ${T.accentBorder}`, borderRadius: 14, padding: "16px 18px", marginBottom: 20, textAlign: "center" }}>
@@ -611,7 +614,7 @@ function TeachersPage() {
 
   return (
     <div style={{ padding: "0 16px" }}>
-      <PageTitle title="Teachers" subtitle="Meet the Sol Seek teaching team" />
+      <PageHero title="Teachers" subtitle="Meet the Sol Seek teaching team" image={IMAGES.owners} />
       <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
         {TEACHERS.map(teacher => {
           const expanded = expandedTeacher === teacher.id;
@@ -657,7 +660,7 @@ function TeachersPage() {
 function MembershipPage() {
   return (
     <div style={{ padding: "0 16px" }}>
-      <PageTitle title="Membership" subtitle="Find your path to practice" />
+      <PageHero title="Membership" subtitle="Find your path to practice" image={IMAGES.newMember} />
       <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
         {MEMBERSHIP_TIERS.map(tier => (
           <div key={tier.id} style={{ background: T.bgCard, border: `1px solid ${tier.popular ? T.accent : T.border}`, borderRadius: 14, padding: "20px 18px", position: "relative", overflow: "hidden" }}>
@@ -698,7 +701,7 @@ function MembershipPage() {
 function EventsPage() {
   return (
     <div style={{ padding: "0 16px" }}>
-      <PageTitle title="Events" subtitle="Workshops, trainings, and special offerings" />
+      <PageHero title="Events" subtitle="Workshops, trainings, and special offerings" image={IMAGES.studioWarm} />
       {EVENTS.map((ev, evIdx) => {
         const eventImages = [IMAGES.studioWarm, IMAGES.classGroup, IMAGES.classAction, IMAGES.studioInterior];
         return (
@@ -1083,11 +1086,17 @@ function SectionHeader({ title, linkText, linkPage }) {
   );
 }
 
-function PageTitle({ title, subtitle }) {
+function PageHero({ title, subtitle, image }) {
   return (
-    <div style={{ marginBottom: 20 }}>
-      <h1 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 34, margin: 0 }}>{title}</h1>
-      {subtitle && <p style={{ fontSize: 13, color: T.textMuted, margin: "4px 0 0" }}>{subtitle}</p>}
+    <div style={{ margin: "-0px -16px 20px", position: "relative", overflow: "hidden" }}>
+      <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
+        <img src={image} alt="" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.3 }} onError={e => { e.target.style.display = "none"; }} />
+      </div>
+      <div style={{ position: "absolute", inset: 0, background: `linear-gradient(165deg, ${T.bg} 0%, rgba(30,36,48,.82) 100%)`, zIndex: 1 }} />
+      <div style={{ position: "relative", zIndex: 2, padding: "28px 22px 24px" }}>
+        <h1 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 34, margin: 0, color: "#fff" }}>{title}</h1>
+        {subtitle && <p style={{ fontSize: 13, color: "#a8b0c0", margin: "4px 0 0" }}>{subtitle}</p>}
+      </div>
     </div>
   );
 }
@@ -1523,6 +1532,9 @@ export default function App() {
             </div>
           </button>
           <div style={{ display: "flex", alignItems: "center", gap: 2 }}>
+            <button onClick={() => { setIsAdmin(true); setPage("admin-dashboard"); }} style={{ padding: 8, borderRadius: 8, border: "none", background: "transparent", cursor: "pointer", color: T.accent }}>
+              <Shield size={20} />
+            </button>
             <button onClick={() => setShowNotifications(true)} style={{ padding: 8, borderRadius: 8, border: "none", background: "transparent", cursor: "pointer", color: "#fff", position: "relative" }}>
               <Bell size={20} />
               {unreadCount > 0 && <span style={{ position: "absolute", top: 4, right: 4, width: 14, height: 14, borderRadius: "50%", background: T.accent, fontSize: 9, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", color: "#fff" }}>{unreadCount}</span>}
