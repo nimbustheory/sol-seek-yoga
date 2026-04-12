@@ -1090,12 +1090,12 @@ function PageHero({ title, subtitle, image }) {
   return (
     <div style={{ margin: "-0px -16px 20px", position: "relative", overflow: "hidden" }}>
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-        <img src={image} alt="" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.3 }} onError={e => { e.target.style.display = "none"; }} />
+        <img src={image} alt="" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.45 }} onError={e => { e.target.style.display = "none"; }} />
       </div>
-      <div style={{ position: "absolute", inset: 0, background: `linear-gradient(165deg, ${T.bg} 0%, rgba(30,36,48,.82) 100%)`, zIndex: 1 }} />
-      <div style={{ position: "relative", zIndex: 2, padding: "28px 22px 24px" }}>
+      <div style={{ position: "absolute", inset: 0, background: `linear-gradient(165deg, rgba(30,36,48,.5) 0%, rgba(30,36,48,.41) 100%)`, zIndex: 1 }} />
+      <div style={{ position: "relative", zIndex: 2, padding: "38px 22px 32px" }}>
         <h1 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 34, margin: 0, color: "#fff" }}>{title}</h1>
-        {subtitle && <p style={{ fontSize: 13, color: "#a8b0c0", margin: "4px 0 0" }}>{subtitle}</p>}
+        {subtitle && <p style={{ fontSize: 13, color: "#c8ccd8", margin: "4px 0 0" }}>{subtitle}</p>}
       </div>
     </div>
   );
