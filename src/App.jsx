@@ -271,7 +271,7 @@ function HomePage() {
         <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
           <img src={IMAGES.hero} alt="" loading="eager" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.25 }} onError={e => { e.target.style.display = "none"; }} />
         </div>
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(165deg, rgba(30,36,48,.6) 0%, rgba(30,36,48,.45) 100%)", zIndex: 1 }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(165deg, rgba(30,36,48,.42) 0%, rgba(30,36,48,.32) 100%)", zIndex: 1 }} />
         <div style={{ position: "relative", zIndex: 2, padding: "32px 22px" }}>
           <p style={{ color: T.accent, fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.2em", marginBottom: 8 }}>
             {formatDateLong(today)}
