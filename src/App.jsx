@@ -1092,7 +1092,7 @@ function PageHero({ title, subtitle, image }) {
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
         <img src={image} alt="" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.45 }} onError={e => { e.target.style.display = "none"; }} />
       </div>
-      <div style={{ position: "absolute", inset: 0, background: `linear-gradient(165deg, rgba(30,36,48,.25) 0%, rgba(30,36,48,.2) 100%)`, zIndex: 1 }} />
+      <div style={{ position: "absolute", inset: 0, background: `linear-gradient(165deg, rgba(30,36,48,.5) 0%, rgba(30,36,48,.41) 100%)`, zIndex: 1 }} />
       <div style={{ position: "relative", zIndex: 2, padding: "50px 22px 42px" }}>
         <h1 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 34, margin: 0, color: "#fff" }}>{title}</h1>
         {subtitle && <p style={{ fontSize: 13, color: "#c8ccd8", margin: "4px 0 0" }}>{subtitle}</p>}
